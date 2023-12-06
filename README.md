@@ -5,20 +5,28 @@ This is a practice project focusing on building a basic application skeleton wit
 ## Features
 
 1. **Add Customer:**
+
     - Utilizes a form to input customer details (First Name, Last Name, Email, Address, Phone Number).
     - Sends a POST request to the Java Spring Boot backend to add a new customer.
 
 2. **List Books:**
+
     - Fetches and displays a list of books from the backend.
     - Renders the book information in a table format.
 
 3. **List Customers:**
     - Fetches and displays a list of customers from the backend.
     - Renders the customer information in a table format.
+## Planned Features
+1. **Add books**
+2. **List Orders**
+3. **Create fully working orders**
+4. **Complete design rework**
 
 ## How to Run
 
 1. **Backend (Java Spring Boot):**
+
     - Ensure you have Java and Maven installed.
     - Navigate to the backend directory.
     - Run `mvn spring-boot:run` to start the backend server.
@@ -32,6 +40,7 @@ This is a practice project focusing on building a basic application skeleton wit
 ## Technologies Used
 
 - **Frontend:**
+
     - React
     - Axios for API requests
     - Bootstrap for styling
