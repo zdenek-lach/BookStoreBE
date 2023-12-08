@@ -1,7 +1,9 @@
 package io.github.zdeneklach.bookstore.controller;
 
+import io.github.zdeneklach.bookstore.exception.CustomerAlreadyExistsException;
 import io.github.zdeneklach.bookstore.model.Customer;
 import io.github.zdeneklach.bookstore.service.CustomerService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -23,7 +25,14 @@ public class CustomerController {
     }
 
     @PostMapping("/create")
-    public Customer createNewCustomer(@RequestBody Customer newCustomer) {
-        return customerService.createCustomer(newCustomer);
+    public ResponseEntity<?> createNewCustomer(@RequestBody Customer newCustomer) {
+        try {
+            return customerService.createCustomer(newCustomer);
+        } catch (CustomerAlreadyExistsException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        } catch (Exception e) {
+            // Handle other exceptions, log, and return an appropriate response
+            return ResponseEntity.status(500).body("Internal Server Error");
+        }
     }
 }

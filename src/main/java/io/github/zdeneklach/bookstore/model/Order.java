@@ -12,12 +12,14 @@ public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long orderId;
+
     @ManyToOne
-    @JoinColumn(name="customer_id",nullable = false)
+    @JoinColumn(name = "customer_id", nullable = false)
     private Customer customer;
+
     @ManyToOne
     @JoinColumn(name = "book_id", nullable = false)
-    private Book Books;
+    private Book book; // Updated variable name
 
     private Date orderDate;
     private int quantity;

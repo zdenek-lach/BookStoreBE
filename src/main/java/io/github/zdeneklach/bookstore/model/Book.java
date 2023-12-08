@@ -11,7 +11,8 @@ import java.time.LocalDate;
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "book_id")
+    private Long bookId; // Updated field name for consistency
     private String title;
     private String author;
     private String genre;
